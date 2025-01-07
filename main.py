@@ -49,6 +49,10 @@ apply_button.click()
 driver.find_element(By.LABEL, 'I\'m not participating in a CBO').click()
 ## high school coursework 
 driver.find_element(By.XPATH, "//a[@href='/student/app-profile?prospectId=676dd01f1f50748393d76963&stage=Education.SeniorCoursework.SeniorCourses']").click()
+driver.find_element(By.XPATH, "//a[@href='#']").click()
+driver.find_element(By.CLASS_NAME, "jss-158").click()
+driver.find_elements(By.TAG_NAME, "button")[1].click()
+
 
 # ## find the login button and click it
 # login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
