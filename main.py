@@ -27,13 +27,20 @@ password_input = driver.find_element(By.NAME, "password")
 password_input.send_keys(os.getenv("PASSWORD"))
 
 ## find the login button
+
 login_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']")))
 
 ## click the login button
 login_button.click()
 
+wait = WebDriverWait(driver, 4)
+
+
 ## wait for the login page to load
-wait.until(EC.url_contains("app-profile"))
+apply_button = driver.find_element(By.XPATH, '//a[@href="https://app.scoir.com/student/app-profile"]')
+apply_button.click()
+
+# wait.until(EC.url_contains("app-profile"))
 
 
 # ## find the login button and click it
@@ -42,7 +49,7 @@ wait.until(EC.url_contains("app-profile"))
 
 # ## wait for the home page to load
 # wait.until(EC.url_contains("home"))
-time.sleep(10)
+time.sleep(100)
 
 ## close the browser
 driver.quit()
