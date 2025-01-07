@@ -1,5 +1,6 @@
 ## import the necessary libraries
 import os
+import time
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -26,28 +27,22 @@ password_input = driver.find_element(By.NAME, "password")
 password_input.send_keys(os.getenv("PASSWORD"))
 
 ## find the login button
-login_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@class='btn btn-primary']")))
+login_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']")))
 
 ## click the login button
 login_button.click()
 
 ## wait for the login page to load
-wait.until(EC.url_contains("login"))
+wait.until(EC.url_contains("app-profile"))
 
-## find the username and password input fields
-username_input = driver.find_element(By.ID, "username")
-password_input = driver.find_element(By.ID, "password")
 
-## enter the username and password
-username_input.send_keys(os.getenv("EMAIL"))
-password_input.send_keys(os.getenv("PASSWORD"))
+# ## find the login button and click it
+# login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
+# login_button.click()
 
-## find the login button and click it
-login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
-login_button.click()
-
-## wait for the home page to load
-wait.until(EC.url_contains("home"))
+# ## wait for the home page to load
+# wait.until(EC.url_contains("home"))
+time.sleep(10)
 
 ## close the browser
 driver.quit()
