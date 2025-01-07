@@ -39,3 +39,8 @@ bash
 ```
 pip freeze > requirements.txt
 ```
+
+## TODO
+
+- [ ] use of agentic ai
+- [ ] auto login using google auth or token
