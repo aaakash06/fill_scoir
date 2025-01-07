@@ -37,7 +37,7 @@ wait = WebDriverWait(driver, 4)
 
 
 ## wait for the login page to load
-apply_button = driver.find_element(By.XPATH, '//a[@href="https://app.scoir.com/student/app-profile"]')
+apply_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//a[@href="https://app.scoir.com/student/app-profile"]')))
 apply_button.click()
 
 # wait.until(EC.url_contains("app-profile"))
