@@ -31,3 +31,11 @@ bash
 ```
 python fill_scoir.py
 ```
+
+5. update requirements.txt
+
+bash
+
+```
+pip freeze > requirements.txt
+```
