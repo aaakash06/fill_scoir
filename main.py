@@ -42,16 +42,21 @@ apply_button.click()
 
 # wait.until(EC.url_contains("app-profile"))
 
+# wait.until(EC.element_to_be_clickable((By.XPATH, '//a[@href="/student/app-profile?stage=&amp;prospectId=676dd01f1f50748393d76963"]')))
+
 
 ## after selecting a college
-
 ## community based org
-driver.find_element(By.LABEL, 'I\'m not participating in a CBO').click()
+time.sleep(10)
+driver.find_element(By.XPATH, '//*[@id="cbo-information"]/div[1]/div[3]/div/div[2]/button').click()
+driver.find_element(By.XPATH, '//*[@id="cbo-information"]/div[1]/div[3]/div/div[2]/button').click()
 ## high school coursework 
-driver.find_element(By.XPATH, "//a[@href='/student/app-profile?prospectId=676dd01f1f50748393d76963&stage=Education.SeniorCoursework.SeniorCourses']").click()
-driver.find_element(By.XPATH, "//a[@href='#']").click()
-driver.find_element(By.CLASS_NAME, "jss-158").click()
-driver.find_elements(By.TAG_NAME, "button")[1].click()
+driver.find_element(By.XPATH, '//*[@id="app-main-content"]/div/div/div/div[2]/div/div[1]/ul/div[6]/div/div/div/ul/a[4]').click()
+# driver.find_element(By.XPATH, '//*[@id="cbo-information"]/div[1]/div[3]/div/div[2]/button').click()
+
+# driver.find_element(By.XPATH, "//a[@href='#']").click()
+# driver.find_element(By.CLASS_NAME, "jss-158").click()
+# driver.find_elements(By.TAG_NAME, "button")[1].click()
 
 
 # ## find the login button and click it
