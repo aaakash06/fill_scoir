@@ -43,6 +43,13 @@ apply_button.click()
 # wait.until(EC.url_contains("app-profile"))
 
 
+## after selecting a college
+
+## community based org
+driver.find_element(By.LABEL, 'I\'m not participating in a CBO').click()
+## high school coursework 
+driver.find_element(By.XPATH, "//a[@href='/student/app-profile?prospectId=676dd01f1f50748393d76963&stage=Education.SeniorCoursework.SeniorCourses']").click()
+
 # ## find the login button and click it
 # login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
 # login_button.click()
