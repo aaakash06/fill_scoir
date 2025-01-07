@@ -1,14 +1,19 @@
 ## import the necessary libraries
+import os
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+## load the environment variables
+load_dotenv()
+
 ## initialize the webdriver
 driver = webdriver.Chrome()
 
 ## navigate to the website
-driver.get("https://www.scoir.com/")
+driver.get("https://app.scoir.com/signin")
 
 ## wait for the page to load
 wait = WebDriverWait(driver, 10)
@@ -27,8 +32,8 @@ username_input = driver.find_element(By.ID, "username")
 password_input = driver.find_element(By.ID, "password")
 
 ## enter the username and password
-username_input.send_keys("your_username")
-password_input.send_keys("your_password")
+username_input.send_keys(os.getenv("EMAIL"))
+password_input.send_keys(os.getenv("PASSWORD"))
 
 ## find the login button and click it
 login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
