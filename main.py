@@ -16,7 +16,14 @@ driver = webdriver.Chrome()
 driver.get("https://app.scoir.com/signin")
 
 ## wait for the page to load
-wait = WebDriverWait(driver, 10)
+wait = WebDriverWait(driver, 4)
+
+# Find the text input by name and type a value
+email_input = driver.find_element(By.NAME, "email")
+email_input.send_keys(os.getenv("EMAIL"))
+
+password_input = driver.find_element(By.NAME, "password")
+password_input.send_keys(os.getenv("PASSWORD"))
 
 ## find the login button
 login_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@class='btn btn-primary']")))

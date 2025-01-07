@@ -44,3 +44,4 @@ pip freeze > requirements.txt
 
 - [ ] use of agentic ai
 - [ ] auto login using google auth or token
+- [ ] get page layout markdown using scraping and use the selector
